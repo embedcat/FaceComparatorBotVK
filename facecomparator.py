@@ -30,6 +30,7 @@ class FaceCompare:
         result.update(error=1 if fd1 is None else 2 if fd2 is None else None)
         if fd1 and fd2:
             dist = distance.euclidean(fd1, fd2)
+            dist = round(dist, 4)
             result.update(distance=dist,
                           file1=str(file1)[:-4] + const.file_with_face_suffix,
                           file2=str(file2)[:-4] + const.file_with_face_suffix)

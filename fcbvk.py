@@ -59,7 +59,7 @@ def do_work_thread():
                 attach = upload.photo_messages([file1, file2])
                 faces = ["photo" + str(a['owner_id']) + "_" + str(a['id']) for a in attach]
                 decision = make_decision(distance)
-                m = decision + "(" + str(distance) + ")"
+                m = decision + " (" + str(distance) + ")"
                 vk.messages.send(user_id=user_id, random_id=get_random_id(), message=m, attachment=faces)
                 log.log("<{}> Distance: {}.".format(user_id, distance))
                 log.log("<{}> Decision: {}.".format(user_id, decision))
