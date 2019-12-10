@@ -109,6 +109,11 @@ if __name__ == "__main__":
                                 pic = sizes[2]['url']
                                 item = [pic, user_id]
                                 q.put(item)
+                    elif event.obj.message['text'] == '/log':
+                        logfile = upload.document(log.get_file_path(), title=log.get_file_path(),
+                                                  message_peer_id=user_id)['doc']
+                        doc = "doc" + str(logfile['owner_id']) + "_" + str(logfile['id'])
+                        vk.messages.send(user_id=user_id, random_id=get_random_id(), attachment=doc)
                     else:
                         vk.messages.send(user_id=user_id, random_id=get_random_id(),
                                          message=msg_dict[msgid.msg_need_2_photos.value])

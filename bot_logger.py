@@ -12,6 +12,9 @@ class BotLogger:
         if startparams:
             self.log("Started with arguments: " + str(startparams))
 
+    def get_file_path(self):
+        return self.file
+
     def log(self, msg, user=None, reply=""):
         if user:
             text = "<" + str(user) + ">: " + str(msg) + "\n<Bot reply>: " + str(reply) + "\n"
