@@ -1,0 +1,11 @@
+name: fcbvk
+channels:
+ - conda-forge
+ - defaults
+dependencies:
+ - dlib
+ - pip
+ - scikit-image
+ - pip:
+   - vk-api
+
