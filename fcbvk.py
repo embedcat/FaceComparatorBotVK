@@ -106,7 +106,10 @@ if __name__ == "__main__":
                         for a in attachments:
                             if a['type'] == 'photo':
                                 sizes = a['photo']['sizes']
-                                pic = sizes[2]['url']
+                                for s in sizes:
+                                    if s['type'] == 'x':
+                                        pic = s['url']
+                                        break
                                 item = [pic, user_id]
                                 q.put(item)
                     elif event.obj.message['text'] == '/log':
